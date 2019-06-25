@@ -6,6 +6,10 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:pizzashop.db"
 
+before do
+  @products = Product.all
+end
+
 class Product < ActiveRecord::Base
 
 end
