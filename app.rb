@@ -17,3 +17,7 @@ end
 get'/about' do
   erb :about
 end
+
+get '/pizza' do
+  erb :pizza
+end
