@@ -2,29 +2,38 @@
 
 <div class="row">
 
-
-
   <% @products.each do |p|%>
     <div class="col-md-3">
+      <div>
       <%= p.title %>
-    <br/>
+    </div>
+
+    <div>
       <img src="<%= p.path_to_image %>">
-      <br/>
+    </div>
+
+    <div>
       <%= p.description %>
-      <br/>
+    </div>
+
+    <div>
       <%= p.price %> rub
-      <br/>
+    </div>
+
+    <div>
       <%= p.size %> sm
-    <br/>
+    </div>
 
-      <button type="button" class="btn btn-primary">Добавить в корзину</button>
-
-
+      <div>
+      <button class="btn btn-sm btn-success" onclick="add_to_cart(<%= p.id %>)"> Add to cart </button>
+      </div>
 
     </div>
-    <% end %>
+
+  <% end %>
 
 </div>
+
 
 
 
