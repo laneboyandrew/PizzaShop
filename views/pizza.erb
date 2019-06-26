@@ -7,6 +7,22 @@
   <% @products.each do |p|%>
     <div class="col-md-3">
       <%= p.title %>
+    <br/>
+      <img src="<%= p.path_to_image %>">
+      <br/>
+      <%= p.description %>
+      <br/>
+      <%= p.size %>
+      <br/>
+      <%= p.is_spicy %>
+      <br/>
+      <%= p.is_veg %>
+      <br/>
+      <%= p.is_best_offer %>
+      <br/>
+      <%= p.price %>
+
+
     </div>
     <% end %>
 
