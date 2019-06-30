@@ -11,7 +11,7 @@ function add_to_cart(id)
     var x = window.localStorage.getItem(key);
     x = x * 1 + 1;
     window.localStorage.setItem(key, x);
- // вывод кол-ва itemщв в корзине
+ // вывод кол-ва itemов в корзине
     alert('Items in your cart: ' + cart_get_number_of_items());
 }
 
