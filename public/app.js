@@ -57,3 +57,12 @@ function cart_get_orders()
     return orders;
 }
 
+function getById(id) {
+    return _.findWhere(orders, {id: id});
+}
+
+function getCount() {
+    return _.size(orders);
+}
+
+

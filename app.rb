@@ -26,6 +26,21 @@ get '/pizza' do
   erb :pizza
 end
 
-post '/cart' do
+get '/cart' do
+
   erb :cart
+end
+
+post '/cart' do
+
+  erb :cart
+end
+
+get '/order' do
+  erb :order
+end
+
+post '/order' do
+
+  erb :order
 end

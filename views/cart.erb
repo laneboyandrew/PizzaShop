@@ -1,0 +1,33 @@
+<div class="row">
+<form action="/order" method="POST">
+<% @products.each do |p|%>
+  <div class="col-md-3">
+    <div>
+      <%= p.title %>
+    </div>
+
+    <div>
+      <img src="<%= p.path_to_image %>">
+    </div>
+
+    <div>
+      <%= p.description %>
+    </div>
+
+    <div>
+      <%= p.price %> rub
+    </div>
+
+    <div>
+      <%= p.size %> sm
+    </div>
+    <div>
+    </div>
+  </div>
+    <% end %>
+
+  <div class="col-md-12">
+
+  <button type="submit" formaction="/order"  class="btn btn-sm btn-success"> Buy </button>
+  </div>
+</form>
