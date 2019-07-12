@@ -99,10 +99,12 @@ post '/place_order' do
 end
 
 get '/activeorders' do
+  erb :activeorders
 
 end
 
 post '/activeorders' do
+  erb :activeorders
 
-  
+
 end
