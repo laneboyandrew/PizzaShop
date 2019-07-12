@@ -84,6 +84,8 @@ end
 
 post '/place_order' do
 
+  @o = Order.new params[:order]
+  @o.save
 
   erb "Заказ принят"
 end
