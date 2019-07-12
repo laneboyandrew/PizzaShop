@@ -17,6 +17,10 @@ end
 
 class Order < ActiveRecord::Base
 
+  validates :name, presence: true, length: {minimum: 3}
+  validates :phone, presence: true, length: {minimum: 6}
+  validates :address, presence: true
+
 end
 get '/' do
 	erb :index
@@ -87,5 +91,18 @@ post '/place_order' do
   @o = Order.new params[:order]
   @o.save
 
-  erb "Заказ принят"
+  if @o.save
+    erb "<h2> Заказ принят!</h2>"
+  else
+    @error = @o.errors.full_messages.first
+  end
+end
+
+get '/activeorders' do
+
+end
+
+post '/activeorders' do
+
+  
 end
