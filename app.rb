@@ -8,12 +8,16 @@ set :database, "sqlite3:pizzashop.db"
 
 before do
   @products = Product.all
+  @orders = Order.all
 end
 
 class Product < ActiveRecord::Base
 
 end
 
+class Order < ActiveRecord::Base
+
+end
 get '/' do
 	erb :index
 end
@@ -71,4 +75,15 @@ end
 post '/order' do
 
   erb :order
+end
+
+get '/place_order' do
+
+  erb :place_order
+end
+
+post '/place_order' do
+
+
+  erb "Заказ принят"
 end
