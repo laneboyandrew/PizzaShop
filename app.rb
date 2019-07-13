@@ -17,7 +17,7 @@ end
 
 class Order < ActiveRecord::Base
 
-  validates :name, presence: true, length: {minimum: 3}
+  validates :name, presence: true, length: {minimum: 2}
   validates :phone, presence: true, length: {minimum: 6}
   validates :address, presence: true
 
