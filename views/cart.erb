@@ -1,3 +1,8 @@
+<script> function cancel_order()
+{
+    alert('aaa');
+    return false;
+}</script>
 
   <div class="bs-example" data-example-id="striped-table">
     <table class="table table-striped">
@@ -55,6 +60,7 @@
       </div>
 
       <button type="submit" class="btn btn-success btn-lg"> Place this order </button>
+      <button class="btn btn-danger btn-lg" onclick="return cancel_order()"> Cancel </button>
 
     </form>
   </div>
