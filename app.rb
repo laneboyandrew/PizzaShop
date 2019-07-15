@@ -92,7 +92,7 @@ post '/place_order' do
   @o.save
 
   if @o.save
-    erb "<h2> Заказ принят!</h2>"
+    erb :order_placed
   else
     @error = @o.errors.full_messages.first
   end
