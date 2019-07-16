@@ -17,6 +17,8 @@ end
 
 class Order < ActiveRecord::Base
 
+
+
   validates :name, presence: true, length: {minimum: 2}
   validates :phone, presence: true, length: {minimum: 6}
   validates :address, presence: true
@@ -88,30 +90,31 @@ post '/order' do
   erb :order
 end
 
-get '/place_order' do
+get '/order_placed' do
 
-  erb :place_order
+  erb :order_placed
 end
 
-post '/place_order' do
+post '/order_placed' do
 
-  @o = Order.new params[:orders_input]
-  @o.save
+  @orders = Order.new params[:orders_input]
+  @orders.save
 
-  if @o.save
+  if @orders.save
     erb :order_placed
   else
-    @error = @o.errors.full_messages.first
+    @error = @orders.errors.full_messages.first
   end
 end
 
-get '/activeorders' do
-  erb :activeorders
+get '/admin' do
+  @orders = Order.order ('created_at DESC')
+  erb :admin
 
 end
 
-post '/activeorders' do
-  erb :activeorders
+post '/admin' do
+  erb :admin
 
 
 end
