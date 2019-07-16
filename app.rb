@@ -41,13 +41,20 @@ end
 
 post '/cart' do
 
+  #получаем список параметров и разбираем их (parse)
+
   @orders_input = params[:orders_input]
-
   @items = parse_orders_input @orders_input
-
+#выводим сообщение о том что корзина пустая
+  if @items.length == 0
+    return erb :cart_is_empty
+  end
+#выводим список продуктов в корзине
   @items.each do |item|
     item[0] = Product.find(item[0])
   end
+
+  #возврашаем значение по-умолчанию
 
   erb :cart
 end
@@ -107,4 +114,12 @@ post '/activeorders' do
   erb :activeorders
 
 
+end
+
+get '/cart_is_empty' do
+  erb :cart_is_empty
+end
+
+post '/cart_is_empty' do
+  erb "заглушка"
 end
